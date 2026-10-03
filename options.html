@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Java Code Privacy Helper — Settings</title>
+  <link rel="stylesheet" href="options.css" />
+</head>
+<body>
+  <main>
+    <h1 data-i18n="settingsHeader">Java Code Privacy Helper settings</h1>
+
+    <section class="card">
+      <h2 data-i18n="languageSection">Language</h2>
+      <label class="field"><span data-i18n="interfaceLanguage">Interface language</span>
+        <select id="uiLanguage">
+          <option value="en">English</option>
+          <option value="ru">Русский</option>
+        </select>
+      </label>
+      <p class="hint" data-i18n="languageHint">English is recommended for Chrome Web Store screenshots and review. Russian is available for personal use.</p>
+    </section>
+
+    <section class="card">
+      <h2 data-i18n="obfuscationSection">Obfuscation</h2>
+      <div class="grid">
+        <label><input type="checkbox" id="renameClasses"> <span data-i18n="renameClasses">Rename classes</span></label>
+        <label><input type="checkbox" id="renameMethods"> <span data-i18n="renameMethods">Rename methods</span></label>
+        <label><input type="checkbox" id="renameFields"> <span data-i18n="renameFields">Rename fields</span></label>
+        <label><input type="checkbox" id="renameLocals"> <span data-i18n="renameLocals">Rename local variables</span></label>
+        <label><input type="checkbox" id="renameParameters"> <span data-i18n="renameParameters">Rename parameters</span></label>
+        <label><input type="checkbox" id="renameTypeReferences"> <span data-i18n="renameTypeReferences">Rename type references in fields, parameters, and local variables</span></label>
+        <label><input type="checkbox" id="preserveAnnotations"> <span data-i18n="preserveAnnotations">Keep annotation names unchanged</span></label>
+        <label><input type="checkbox" id="preserveConstants"> <span data-i18n="preserveConstants">Keep UPPER_SNAKE_CASE constants unchanged</span></label>
+        <label><input type="checkbox" id="preservePublicApi"> <span data-i18n="preservePublicApi">Do not rename public API</span></label>
+      </div>
+      <label class="field"><span data-i18n="placeholderPrefix">Placeholder prefix</span>
+        <input id="placeholderPrefix" type="text" placeholder="JCPH" />
+      </label>
+      <p class="hint" data-i18n="localHint">The extension runs locally: Java code, mappings, and settings stay in browser storage.</p>
+    </section>
+
+    <section class="card danger-zone">
+      <h2 data-i18n="serviceSection">Service</h2>
+      <div class="buttons">
+        <button id="saveBtn" class="primary" data-i18n="saveSettings">Save settings</button>
+        <button id="clearMappingsBtn" data-i18n="clearMappings">Clear mappings</button>
+        <button id="resetBtn" data-i18n="resetAll">Reset all</button>
+      </div>
+      <p id="status"></p>
+    </section>
+  </main>
+
+  <script src="src/storage.js"></script>
+  <script src="src/i18n.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>

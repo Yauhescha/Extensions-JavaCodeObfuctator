@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Java Code Privacy Helper</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <header>
+    <div>
+      <h1>Java Code Privacy Helper</h1>
+      <p data-i18n="popupSubtitle">Reversible Java identifier obfuscation for AI chats</p>
+    </div>
+    <button id="openOptions" class="icon-button" title="Settings" data-i18n-title="optionsTitle">⚙</button>
+  </header>
+
+  <section id="status" class="status"></section>
+
+  <main>
+    <label for="sourceCode" data-i18n="inputLabel">Java code or chat response</label>
+    <textarea id="sourceCode" spellcheck="false" placeholder="Paste Java code to obfuscate, or paste a ChatGPT response to de-obfuscate..." data-i18n-placeholder="inputPlaceholder"></textarea>
+
+    <div class="buttons">
+      <button id="obfuscateBtn" class="primary" data-i18n="obfuscate">Obfuscate</button>
+      <button id="deobfuscateBtn" data-i18n="deobfuscate">De-obfuscate</button>
+      <button id="copyOutputBtn" data-i18n="copyOutput">Copy result</button>
+    </div>
+
+    <label for="outputCode" data-i18n="outputLabel">Result</label>
+    <textarea id="outputCode" spellcheck="false" readonly></textarea>
+
+    <details>
+      <summary data-i18n="latestMapping">Latest mapping</summary>
+      <pre id="mappingPreview">No mapping yet.</pre>
+    </details>
+  </main>
+
+  <footer>
+    <span id="footerStats"></span>
+  </footer>
+
+  <script src="src/javaObfuscator.js"></script>
+  <script src="src/storage.js"></script>
+  <script src="src/i18n.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

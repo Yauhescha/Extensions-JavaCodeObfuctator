@@ -1,0 +1,96 @@
+:root {
+  --bg: #111827;
+  --panel: #1f2937;
+  --panel-2: #243244;
+  --text: #f9fafb;
+  --muted: #9ca3af;
+  --line: #374151;
+  --accent: #60a5fa;
+  --accent-2: #2563eb;
+  --danger: #f97316;
+  --ok: #34d399;
+}
+
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  width: 760px;
+  min-height: 620px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 18px 12px;
+  border-bottom: 1px solid var(--line);
+  background: linear-gradient(180deg, #172033, #111827);
+}
+
+h1 { margin: 0; font-size: 18px; line-height: 1.2; }
+p { margin: 4px 0 0; color: var(--muted); font-size: 12px; }
+main { padding: 14px 18px 12px; }
+label { display: block; margin: 10px 0 6px; font-size: 13px; color: #d1d5db; font-weight: 600; }
+textarea {
+  width: 100%;
+  height: 170px;
+  resize: vertical;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  background: #0b1220;
+  color: var(--text);
+  padding: 12px;
+  font-family: "JetBrains Mono", Consolas, Monaco, monospace;
+  font-size: 12px;
+  line-height: 1.45;
+  outline: none;
+}
+textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 2px rgba(96, 165, 250, .18); }
+.buttons { display: flex; gap: 8px; margin: 12px 0; flex-wrap: wrap; }
+button {
+  border: 1px solid var(--line);
+  background: var(--panel-2);
+  color: var(--text);
+  border-radius: 9px;
+  padding: 9px 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+button:hover { filter: brightness(1.1); }
+button:disabled { opacity: .5; cursor: not-allowed; }
+button.primary { background: var(--accent-2); border-color: var(--accent-2); }
+.icon-button { width: 38px; height: 38px; padding: 0; }
+.status {
+  min-height: 36px;
+  padding: 9px 18px;
+  color: var(--muted);
+  font-size: 13px;
+  border-bottom: 1px solid var(--line);
+}
+.status.ok { color: var(--ok); }
+.status.warn { color: var(--danger); }
+.hidden { display: none !important; }
+details {
+  margin-top: 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: var(--panel);
+  padding: 10px;
+}
+summary { cursor: pointer; color: var(--muted); }
+pre {
+  max-height: 140px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-size: 11px;
+  color: #d1d5db;
+}
+footer {
+  padding: 10px 18px 14px;
+  color: var(--muted);
+  font-size: 12px;
+}
